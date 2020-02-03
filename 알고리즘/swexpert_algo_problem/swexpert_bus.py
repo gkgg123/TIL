@@ -10,24 +10,19 @@ for test_case in range(1,T+1):
     for ind in char:
         char_map[ind]=1
     for st in range(len(char)-1):
-        if char[st]+3<char[st+1]:
+        if char[st]+k<char[st+1]:
             stop=99999
-    while True:
-        if sum(char_map[person:person+k+1]):
-            temp=0
-            for indd,value in enumerate(char_map[:person+k+1]):
-                if value==1:
-                    person=indd
-            cnt=cnt+1
-            if person+k>=n:
-                break
-print(cnt)            
-
-            
-
-
-        
-
-
-
-
+    if stop==0:
+        while True:
+            if sum(char_map[person:person+k+1]):
+                temp=0
+                for indd,value in enumerate(char_map[:person+k+1]):
+                    if value==1:
+                        person=indd
+                cnt=cnt+1
+                if person+k>=n:
+                    break
+    if stop>0:
+        print('#{} 0'.format(test_case))
+    else:
+        print('#{} {}'.format(test_case,cnt))
