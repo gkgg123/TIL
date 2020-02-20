@@ -13,7 +13,8 @@ for tc in range(1,T+1):
             result+=arr[i][k[i]]
             if result>min_result:
                 break
-        min_result=result
+        if result<min_result:
+            min_result=result
 
     print('#{} {}'.format(tc,min_result))
         
