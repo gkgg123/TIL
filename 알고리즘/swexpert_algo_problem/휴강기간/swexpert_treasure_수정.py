@@ -24,8 +24,8 @@ for tc in range(1,T+1):
         else:
             q.rotate(1)
     total=[]                         ### 그렇게 된것을 16진수로 바꿔줘야하는데
-    for k in result:
-        total.append(int(k,16))
-    total.sort(reverse=True)
-    print('#{} {}'.format(tc,total[K-1]))
+    for k in result:                 ### 쉽게 바꾸는 방법은 int('바꾸고 싶은 16진수',16)을 써주면 자동적으로 16진수로 바꿔주고,
+        total.append(int(k,16))      
+    total.sort(reverse=True)        #### reverse= True를 하면 내림차순으로 정렬을 해준다. 
+    print('#{} {}'.format(tc,total[K-1]))   ### 거기서 K번째 index를 찾아주면 된다.
     

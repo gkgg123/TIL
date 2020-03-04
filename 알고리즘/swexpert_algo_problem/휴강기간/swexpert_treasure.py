@@ -1,5 +1,5 @@
 import collections 
-
+### 보물상자 비밀번호는 하나씩
 
 T=int(input())
 

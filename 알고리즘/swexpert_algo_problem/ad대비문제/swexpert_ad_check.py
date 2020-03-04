@@ -27,6 +27,7 @@ for tc in range(1,T+1):
     for i in range(4):
         for j in range(4):
             dfs(i,j,'')
+    print(result)
     print('#{} {}'.format(tc,len(result)))
 
 

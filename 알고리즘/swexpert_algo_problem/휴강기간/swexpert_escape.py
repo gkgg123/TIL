@@ -2,7 +2,7 @@ import collections
 
 dx=[-1,1,0,0]
 dy=[0,0,1,-1]
-U,D,R,L=1,2,4,8
+U,D,R,L=0,2,4,8
 tunnel=[
     [0],
     [U,D,R,L],
