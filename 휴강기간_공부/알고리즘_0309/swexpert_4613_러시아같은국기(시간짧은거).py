@@ -1,4 +1,4 @@
-### 실행시간이 짧은 사람거 리뷰한거 ####
+
 
 T = int(input())
 for tc in range(1, T + 1):
