@@ -1,8 +1,6 @@
-import sys
-sys.stdin=open('2814.txt','r')
 
 T=int(input())
-
+### 실패 ####
 def dfs(x,cnt):
     global max_cnt
     visited[x][x]=1
@@ -10,14 +8,14 @@ def dfs(x,cnt):
     
     while st:
         a,cn=st.pop()
-        if max_cnt<cn:
-            max_cnt=cn
+        
         for i in graph[a]:
             if visited[x][i]==0:
                 st.append([i,cn+1])
                 visited[x][i]=1
                 break
-                
+        if max_cnt<cn:
+            max_cnt=cn
  
 
 
