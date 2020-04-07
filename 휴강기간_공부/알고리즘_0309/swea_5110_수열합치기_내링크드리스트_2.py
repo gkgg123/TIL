@@ -200,10 +200,30 @@ class LinkedList:
             current=current.next
             ind+=1
         return -1
-        
-            
-            
-a=LinkedList()
-a.append(1)
-print(a.pop())
-a.print_all()
+
+
+T=int(input())
+
+
+for tc in range(1,T+1):
+    N,M=map(int,input().split())
+    arr=[list(map(int,input().split())) for _ in range(M)]
+    result=LinkedList()
+    for i in range(N):
+        result.append(arr[0][i])
+    row=1
+    while row<M:
+        larger_index=result.find_lager_index(arr[row][0])
+        if larger_index==-1:
+            for i in range(N):
+                result.append(arr[row][i])
+        else:
+            for i in range(N-1,-1,-1):
+                result.insert(larger_index,arr[row][i])
+        row+=1
+    print('#{} '.format(tc),end='')
+    total_len=result.sizeofList()
+    result=reversed(result.slicing(total_len-10,total_len))
+    print(*result)
+    
+    

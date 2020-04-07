@@ -200,10 +200,29 @@ class LinkedList:
             current=current.next
             ind+=1
         return -1
-        
-            
-            
-a=LinkedList()
-a.append(1)
-print(a.pop())
-a.print_all()
+
+    T=int(input())
+
+for tc in range(1,T+1):
+    N,M,L=map(int,input().split())
+    arr=list(map(int,input().split()))
+    result=LinkedList()
+    for i in arr:
+        result.append(i)
+    for i in range(M):
+        doit=list(input().split())
+
+        if doit[0]=='I':
+            result.insert(int(doit[1]),int(doit[2]))
+        elif doit[0]=='D':
+            result.remove(int(doit[1]))
+        else:
+            result.change(int(doit[1]),int(doit[2]))
+
+
+    result=result.print_all()
+
+    if L<len(result):
+        print('#{} {}'.format(tc,result[L]))
+    else:
+        print('#{} -1'.format(tc)) 

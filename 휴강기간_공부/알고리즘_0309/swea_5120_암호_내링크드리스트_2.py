@@ -200,10 +200,40 @@ class LinkedList:
             current=current.next
             ind+=1
         return -1
-        
-            
-            
-a=LinkedList()
-a.append(1)
-print(a.pop())
-a.print_all()
+
+T=int(input())
+
+for tc in range(1,T+1):
+    N,M,K=map(int,input().split())
+
+    arr=list(map(int,input().split()))
+    result=LinkedList()
+    for i in arr:
+        result.append(i)
+
+    ind=M
+    times=0
+    while times<K:
+        if ind<N+times:
+            temp=result.find(ind)+result.find(ind-1)
+            result.insert(ind,temp)
+        elif ind==(N+times):
+            temp=result.find(ind-1)+result.find(0)
+            result.append(temp)
+        else:
+            ind=ind-(N+times)
+            temp=result.find(ind-1)+result.find(ind)
+            result.insert(ind,temp)
+        ind+=M
+        times+=1
+
+    if result.nodesize<10:
+        result=result.print_all()
+        result.reverse()
+        print('#{}'.format(tc),end=' ')
+        print(*result)
+    else:
+        total_len=result.sizeofList()
+        result=reversed(result.slicing(total_len-10,total_len))
+        print('#{} '.format(tc),end='')
+        print(*result)
