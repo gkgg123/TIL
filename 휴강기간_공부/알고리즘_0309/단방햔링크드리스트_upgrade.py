@@ -27,7 +27,7 @@ class LinkedList:
                 temp=Node(self.head.data,self.head.next)
                 self.head=newNode
                 self.tail=temp
-                self.head.next=self.tail
+                self.head.next=self.tail  ### 잘못되어서 추가 수정해줬다.
             else:
                 if ind<self.nodesize:
                     current=self.head

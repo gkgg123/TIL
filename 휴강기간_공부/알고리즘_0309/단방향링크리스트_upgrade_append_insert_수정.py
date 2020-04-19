@@ -198,29 +198,23 @@ class LinkedList:
             current=current.next
             ind+=1
         return -1
-
-T=int(input())
-
-
-for tc in range(1,T+1):
-    N,M=map(int,input().split())
-    arr=[list(map(int,input().split())) for _ in range(M)]
-    result=LinkedList()
-    for i in range(N):
-        result.append(arr[0][i])
-    row=1
-    while row<M:
-        larger_index=result.find_lager_index(arr[row][0])
-        if larger_index==-1:
-            for i in range(N):
-                result.append(arr[row][i])
-        else:
-            for i in range(N-1,-1,-1):
-                result.insert(larger_index,arr[row][i])
-        row+=1
-    print('#{} '.format(tc),end='')
-    total_len=result.sizeofList()
-    result=reversed(result.slicing(total_len-10,total_len))
-    print(*result)
-    
-    
+        
+            
+            
+a=LinkedList()  ### a라는 링크드 리스트를 생성
+print(a.empty())  ### a가 비어있는지 True False를 알려준다.
+a.append(1)     ### append 제일 뒤에 값을 추가해준다.
+a.insert(0,3)   ### insert는 해당 인덱스에 값을 넣어주고 원래 해당인덱스와 그 뒤로 있던 값들이 하나씩 뒤로 밀어진다.
+a.clear()       ### clear는 전부 초기화시켜서 값을 다 비워준다.
+for i in range(30):
+    a.append(i)
+print(a.find(19)) ### 19 index에 위치한 값을 반환해준다.
+a.change(19,55)    ### change는  해당 index의 값을 변환시켜준다. 여기서는 19번째 index의 값을 55로 바꿔준다.
+print(a.find(19))
+a.remove(19)      ### 해당 index의 위치의 값을 삭제한다.
+print(a.print_all())  ### 저장된 모든 값을 list로 반환해준다.
+print(a.pop())    ### 가장 끝의 값을 반환해주고, 삭제한다.
+print(a.popleft())   ### 가장 왼쪽의 값을 반환해주고, 삭제한다. 
+print(a.find_lager_index(23))   ### 들어가 값보다 큰 값이 있는 index의 위치를 반환해준다. 수열합치기를 쉽게풀기위해만든 메서드이다.
+length=a.sizeofList()  ### a의 size를 알려준다.
+print(a.slicing(length-10,length))   ### slicing은 start 위치에서 end-1 위치까지 값을 list로 반환해준다.

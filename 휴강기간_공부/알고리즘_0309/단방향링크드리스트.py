@@ -73,6 +73,7 @@ class LinkedList:
                     current=current.next
                     cnt+=1
                 prev.next=current.next
+            self.nodesize-=1
     def print_all(self):   ### 내가 지금까지 저장한 링크드리스트를 리스트형태로 반환해준다.
         result=[]
         if self:
