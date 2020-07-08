@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
+      <div>안녕하세요!</div>
       <router-link to="/">TodoView</router-link> |
     </div>
     <router-view/>
